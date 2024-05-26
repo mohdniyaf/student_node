@@ -1,5 +1,8 @@
 const mongoose=require('mongoose');
-const mongoUrl='mongodb://localhost:27017/university';
+require('dotenv').config();
+const mongoUrl=process.env.DB_URL;
+//const mongoUrl='mongodb://localhost:27017/university';
+//const mongoUrl='mongodb+srv://mohammedniyaf77:niyaf12345@cluster0.ddwi55r.mongodb.net/'
 
 mongoose.connect(mongoUrl,{
    // useNewUrlParser:true,
