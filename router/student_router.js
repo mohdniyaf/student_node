@@ -35,7 +35,7 @@ router.post('/',async(req,res)=>{
         const studentId = req.params.id; 
         const studentUpdatedData = req.body;
 
-        const response = await Person.findByIdAndUpdate(studentId, studentUpdatedData, {
+        const response = await students.findByIdAndUpdate(studentId, studentUpdatedData, {
             new: true,
             runValidators: true,
         })
@@ -56,7 +56,7 @@ router.post('/',async(req,res)=>{
         const studentId=req.params.id;
         const studentdeleteData=req.body;
 
-        const response=await person.findByIdAndDelete(studentId,studentdeleteData);
+        const response=await students.findByIdAndDelete(studentId,studentdeleteData);
 
         if (!response) {
             return res.status(404).json({ err: "person id not found" });
